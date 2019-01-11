@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Engine.ViewModels;
+using Engine.Models;
 
 namespace WPFUI
 {
@@ -32,6 +33,11 @@ namespace WPFUI
             _gameSession = new GameSession();
 
             DataContext = _gameSession;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            _gameSession.CurrentPlayer.ExperiencePoints = _gameSession.CurrentPlayer.ExperiencePoints + 10;
         }
     }
 }
